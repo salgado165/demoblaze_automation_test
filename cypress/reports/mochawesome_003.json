@@ -1,0 +1,200 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-02-04T01:02:27.998Z",
+    "end": "2026-02-04T01:02:28.938Z",
+    "duration": 940,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "84571d67-a51a-4ce2-93f1-123eae8b95a2",
+      "title": "",
+      "fullFile": "cypress\\e2e\\api\\authtorization.cy.js",
+      "file": "cypress\\e2e\\api\\authtorization.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5dfc4e66-5544-4b3f-a75c-a4988cbad42c",
+          "title": "Test API Demoblaze Authorization",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Trying to create new user",
+              "fullTitle": "Test API Demoblaze Authorization Trying to create new user",
+              "timedOut": null,
+              "duration": 254,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: 'POST',\n  url: `${apiURL}/signup`,\n  body: userTested,\n  failOnsStatusCode: false\n}).then(response => {\n  expect(response.status).to.eq(200);\n  if (response.body && response.body.errorMessage) {\n    expect(response.body.errorMessage).to.be.a('string');\n  } else {\n    expect(response.body).to.be.oneOf([{}, \"\"]);\n  }\n});",
+              "err": {},
+              "uuid": "1bb129d7-485d-4bde-97ad-f941394016d4",
+              "parentUUID": "5dfc4e66-5544-4b3f-a75c-a4988cbad42c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Attemp to create user that already exist",
+              "fullTitle": "Test API Demoblaze Authorization Attemp to create user that already exist",
+              "timedOut": null,
+              "duration": 101,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: 'POST',\n  url: `${apiURL}/signup`,\n  body: userTested,\n  failOnsStatusCode: false\n}).then(response => {\n  expect(response.status).to.eq(200);\n  expect(response.body).to.have.property('errorMessage');\n});",
+              "err": {},
+              "uuid": "ba43e036-bc5a-423d-b98a-c38fef0537df",
+              "parentUUID": "5dfc4e66-5544-4b3f-a75c-a4988cbad42c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login successfully",
+              "fullTitle": "Test API Demoblaze Authorization Login successfully",
+              "timedOut": null,
+              "duration": 103,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: 'POST',\n  url: `${apiURL}/login`,\n  body: userTested,\n  failOnsStatusCode: false\n}).then(response => {\n  expect(response.status).to.eq(200);\n  expect(response.body).to.have.property('errorMessage');\n});",
+              "err": {},
+              "uuid": "ccdae39a-41ed-43d8-ba4f-adbc740a0ad8",
+              "parentUUID": "5dfc4e66-5544-4b3f-a75c-a4988cbad42c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login Failed with Wrong password",
+              "fullTitle": "Test API Demoblaze Authorization Login Failed with Wrong password",
+              "timedOut": null,
+              "duration": 111,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: 'POST',\n  url: `${apiURL}/login`,\n  body: {\n    userName: userTested.userName,\n    password: ''\n  },\n  failOnsStatusCode: false\n}).then(response => {\n  expect(response.status).to.eq(200);\n  expect(response.body).to.have.property('errorMessage');\n});",
+              "err": {},
+              "uuid": "edd2f3e3-a097-4f39-8029-9fb076c83d65",
+              "parentUUID": "5dfc4e66-5544-4b3f-a75c-a4988cbad42c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login Failed with wrong userName",
+              "fullTitle": "Test API Demoblaze Authorization Login Failed with wrong userName",
+              "timedOut": null,
+              "duration": 182,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: 'POST',\n  url: `${apiURL}/login`,\n  body: {\n    userName: 'prueba',\n    password: userTested.password\n  },\n  failOnsStatusCode: false\n}).then(response => {\n  expect(response.status).to.eq(200);\n  expect(response.body).to.have.property('errorMessage');\n});",
+              "err": {},
+              "uuid": "f1c5f4d3-31b2-47ac-89d5-d2b6c3ffd91f",
+              "parentUUID": "5dfc4e66-5544-4b3f-a75c-a4988cbad42c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login Failed Wrong userName and Password",
+              "fullTitle": "Test API Demoblaze Authorization Login Failed Wrong userName and Password",
+              "timedOut": null,
+              "duration": 100,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: 'POST',\n  url: `${apiURL}/login`,\n  body: {\n    userName: 'prueba',\n    password: 'error'\n  },\n  failOnsStatusCode: false\n}).then(response => {\n  expect(response.status).to.eq(200);\n  expect(response.body).to.have.property('errorMessage');\n});",
+              "err": {},
+              "uuid": "d0e3a6f6-8056-4472-a4bd-9f30dcf44287",
+              "parentUUID": "5dfc4e66-5544-4b3f-a75c-a4988cbad42c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "1bb129d7-485d-4bde-97ad-f941394016d4",
+            "ba43e036-bc5a-423d-b98a-c38fef0537df",
+            "ccdae39a-41ed-43d8-ba4f-adbc740a0ad8",
+            "edd2f3e3-a097-4f39-8029-9fb076c83d65",
+            "f1c5f4d3-31b2-47ac-89d5-d2b6c3ffd91f",
+            "d0e3a6f6-8056-4472-a4bd-9f30dcf44287"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 851,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
