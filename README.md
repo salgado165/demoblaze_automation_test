@@ -34,27 +34,26 @@ INSTALLATION
 --------------------------------------------------
 PROJECT STRUCTURE
 --------------------------------------------------
-cypress/
- ├─ e2e/
- │   ├─ api/
- │   │   └─ test_authtorization.cy.js
- │   └─ webs/
- │       └─ shopping_car.cy.js
- ├─ fixtures/
- ├─ reports/
- └─ support/
-cypress.config.js
+
+cypress/\
+ ├─ e2e/\
+ │   ├─ api/\
+ │   │   └─ test_authtorization.cy.js\
+ │   └─ webs/\
+ │       └─ shopping_car.cy.js\
+ ├─ fixtures\
+ ├─ reports\
+ └─ support\
+cypress.config.js\
 package.json
 
 --------------------------------------------------
 TEST EXECUTION
 --------------------------------------------------
 Run tests in interactive mode:
-
    npx cypress open
 
 Run tests in headless mode:
-
    npx cypress run
 
 --------------------------------------------------
