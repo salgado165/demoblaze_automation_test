@@ -50,10 +50,10 @@ package.json
 --------------------------------------------------
 TEST EXECUTION
 --------------------------------------------------
-Run tests in interactive mode:
+Run tests, debug and visualize on browser:
    npx cypress open
 
-Run tests in headless mode:
+Run tests only in the terminal:
    npx cypress run
 
 --------------------------------------------------
