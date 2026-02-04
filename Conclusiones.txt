@@ -1,0 +1,22 @@
+API TEST
+
+Functional testing was performed for both API and UI using Cypress.
+
+On API testing, the responses did not return any status other than 200,
+for that reason validations were made through the body structure and
+error messages.
+
+API login tests were added using wrong username, wrong password, both
+wrong and both correct, in order to cover different scenarios.
+
+
+UI Automation Test
+
+A complete flow was added from selecting items, adding them to the cart,
+completing the purchase and displaying the successful message, including
+browser alerts.
+
+
+Conclusion
+
+Functional testing was successfully implemented for both API
